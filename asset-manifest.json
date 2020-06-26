@@ -1,0 +1,21 @@
+{
+  "files": {
+    "app.js": "/sia-publications/static/js/app.232d69d9.chunk.js",
+    "app.js.map": "/sia-publications/static/js/app.232d69d9.chunk.js.map",
+    "runtime~app.js": "/sia-publications/static/js/runtime~app.06f1bef8.js",
+    "runtime~app.js.map": "/sia-publications/static/js/runtime~app.06f1bef8.js.map",
+    "static/js/2.65d94f9c.chunk.js": "/sia-publications/static/js/2.65d94f9c.chunk.js",
+    "static/js/2.65d94f9c.chunk.js.map": "/sia-publications/static/js/2.65d94f9c.chunk.js.map",
+    "favicon-16.png": "/sia-publications/favicon-16.png",
+    "favicon-32.png": "/sia-publications/favicon-32.png",
+    "favicon.ico": "/sia-publications/favicon.ico",
+    "index.html": "/sia-publications/index.html",
+    "manifest.json": "/sia-publications/manifest.json",
+    "serve.json": "/sia-publications/serve.json"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.06f1bef8.js",
+    "static/js/2.65d94f9c.chunk.js",
+    "static/js/app.232d69d9.chunk.js"
+  ]
+}
