@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/sia-publications/static/js/app.f214a6e6.chunk.js",
-    "app.js.map": "/sia-publications/static/js/app.f214a6e6.chunk.js.map",
+    "app.js": "/sia-publications/static/js/app.57c59341.chunk.js",
+    "app.js.map": "/sia-publications/static/js/app.57c59341.chunk.js.map",
     "runtime~app.js": "/sia-publications/static/js/runtime~app.06f1bef8.js",
     "runtime~app.js.map": "/sia-publications/static/js/runtime~app.06f1bef8.js.map",
     "static/js/2.058c47cb.chunk.js": "/sia-publications/static/js/2.058c47cb.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime~app.06f1bef8.js",
     "static/js/2.058c47cb.chunk.js",
-    "static/js/app.f214a6e6.chunk.js"
+    "static/js/app.57c59341.chunk.js"
   ]
 }

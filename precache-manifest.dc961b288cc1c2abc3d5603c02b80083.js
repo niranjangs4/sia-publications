@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "4eda7358228126e5a214",
-    "url": "/sia-publications/static/js/app.f214a6e6.chunk.js"
+    "revision": "6c73da6f0ba2e7b50030",
+    "url": "/sia-publications/static/js/app.57c59341.chunk.js"
   },
   {
     "revision": "8b95c329a89a63d245df",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/sia-publications/favicon.ico"
   },
   {
-    "revision": "51deb370a2a9f624e57361afd58f92d2",
+    "revision": "8ae5105eee5fe2a59967fa06d6a33794",
     "url": "/sia-publications/index.html"
   },
   {
