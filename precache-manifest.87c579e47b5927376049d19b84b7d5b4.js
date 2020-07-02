@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "6c73da6f0ba2e7b50030",
-    "url": "/sia-publications/static/js/app.57c59341.chunk.js"
+    "revision": "3412c5e3feef5f73e84f",
+    "url": "/sia-publications/static/js/app.0c75738d.chunk.js"
   },
   {
     "revision": "8b95c329a89a63d245df",
@@ -12,12 +12,12 @@ self.__precacheManifest = [
     "url": "/sia-publications/static/js/2.058c47cb.chunk.js"
   },
   {
-    "revision": "d0c694b562b2208635f250762cd7fc79",
-    "url": "/sia-publications/serve.json"
-  },
-  {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/sia-publications/expo-service-worker.js"
+  },
+  {
+    "revision": "d0c694b562b2208635f250762cd7fc79",
+    "url": "/sia-publications/serve.json"
   },
   {
     "revision": "71033553ddc0843407efe54c23890fe2",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/sia-publications/favicon.ico"
   },
   {
-    "revision": "8ae5105eee5fe2a59967fa06d6a33794",
+    "revision": "41ac35489180a52559716fba05f4a0f7",
     "url": "/sia-publications/index.html"
   },
   {
