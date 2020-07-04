@@ -1,33 +1,19 @@
 {
   "files": {
-    "app.js": "/sia-publications/static/js/app.5dead2f9.chunk.js",
-    "app.js.map": "/sia-publications/static/js/app.5dead2f9.chunk.js.map",
-    "runtime~app.js": "/sia-publications/static/js/runtime~app.06f1bef8.js",
-    "runtime~app.js.map": "/sia-publications/static/js/runtime~app.06f1bef8.js.map",
-    "static/js/2.0399e02e.chunk.js": "/sia-publications/static/js/2.0399e02e.chunk.js",
-    "static/js/2.0399e02e.chunk.js.map": "/sia-publications/static/js/2.0399e02e.chunk.js.map",
+    "main.js": "/sia-publications/static/js/main.deb85869.chunk.js",
+    "main.js.map": "/sia-publications/static/js/main.deb85869.chunk.js.map",
+    "runtime-main.js": "/sia-publications/static/js/runtime-main.b20c50fa.js",
+    "runtime-main.js.map": "/sia-publications/static/js/runtime-main.b20c50fa.js.map",
+    "static/js/2.f3928c5b.chunk.js": "/sia-publications/static/js/2.f3928c5b.chunk.js",
+    "static/js/2.f3928c5b.chunk.js.map": "/sia-publications/static/js/2.f3928c5b.chunk.js.map",
     "index.html": "/sia-publications/index.html",
-    "manifest.json": "/sia-publications/manifest.json",
-    "serve.json": "/sia-publications/serve.json",
-    "static/media/close_icon.svg": "/sia-publications/static/media/close_icon.adac6b64.svg",
-    "static/media/close_icon_h.svg": "/sia-publications/static/media/close_icon_h.d4e3c3b6.svg",
-    "static/media/formula.svg": "/sia-publications/static/media/formula.9378c98e.svg",
-    "static/media/fulls_icon.svg": "/sia-publications/static/media/fulls_icon.35e50454.svg",
-    "static/media/fulls_icon_h.svg": "/sia-publications/static/media/fulls_icon_h.adcdea46.svg",
-    "static/media/low-vision.svg": "/sia-publications/static/media/low-vision.ea3e3589.svg",
-    "static/media/max_icon.svg": "/sia-publications/static/media/max_icon.1a04db83.svg",
-    "static/media/max_icon_h.svg": "/sia-publications/static/media/max_icon_h.96ab2cad.svg",
-    "static/media/min_icon.svg": "/sia-publications/static/media/min_icon.869a5640.svg",
-    "static/media/min_icon_h.svg": "/sia-publications/static/media/min_icon_h.f31165b3.svg",
-    "static/media/mins_icon.svg": "/sia-publications/static/media/mins_icon.5d99b0f6.svg",
-    "static/media/mins_icon_h.svg": "/sia-publications/static/media/mins_icon_h.8702a88b.svg",
-    "static/media/select-all.svg": "/sia-publications/static/media/select-all.5f8af7f7.svg",
-    "static/media/subscript.svg": "/sia-publications/static/media/subscript.4b09e769.svg",
-    "static/media/superscript.svg": "/sia-publications/static/media/superscript.812aba03.svg"
+    "precache-manifest.b05979d216b2847d240253d7916e75f9.js": "/sia-publications/precache-manifest.b05979d216b2847d240253d7916e75f9.js",
+    "service-worker.js": "/sia-publications/service-worker.js",
+    "static/js/2.f3928c5b.chunk.js.LICENSE.txt": "/sia-publications/static/js/2.f3928c5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime~app.06f1bef8.js",
-    "static/js/2.0399e02e.chunk.js",
-    "static/js/app.5dead2f9.chunk.js"
+    "static/js/runtime-main.b20c50fa.js",
+    "static/js/2.f3928c5b.chunk.js",
+    "static/js/main.deb85869.chunk.js"
   ]
 }
