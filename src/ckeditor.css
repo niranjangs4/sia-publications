@@ -1,0 +1,15 @@
+.ck-editor {
+	width: 700px;
+	height: 300px;
+}
+
+@media (max-width: 1200px) {
+	.ck-editor {
+		width: 350px;
+		height: 200px;
+	}
+}
+
+.ck-editor__editable_inline {
+    min-height: 300px;
+}

@@ -1,0 +1,31 @@
+.red{
+    color: red; 
+  }
+  .green {
+     color :green; 
+  }
+
+  .ant-table-thead>tr.ant-table-row-hover:not(.ant-table-expanded-row)>td, 
+  .ant-table-tbody>tr.ant-table-row-hover:not(.ant-table-expanded-row)>td, 
+  .ant-table-thead>tr:hover:not(.ant-table-expanded-row)>td, 
+  .ant-table-tbody>tr:hover:not(.ant-table-expanded-row)>td {
+      background: lightblue
+  }
+
+ 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #1a060669;
+}
+
+#myTable tbody > tr:last-child > td {
+  border: 0;
+}
+
+thead[class*="ant-table-thead"] th{
+    background-color: rgba(0, 225, 255, 0.315) !important;
+  }
