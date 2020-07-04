@@ -1,2 +1,0 @@
-(this.webpackJsonp=this.webpackJsonp||[]).push([[0],[function(e,i,o){o(1),e.exports=o(2)},function(e,i){"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/sia-publications/expo-service-worker.js",{scope:"/sia-publications/"}).then((function(e){})).catch((function(e){console.info("Failed to register service-worker",e)}))}))}],[[0,1,2]]]);
-//# sourceMappingURL=app.414b6991.chunk.js.map

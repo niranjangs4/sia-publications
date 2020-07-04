@@ -1,18 +1,19 @@
 {
   "files": {
-    "app.js": "/sia-publications/static/js/app.414b6991.chunk.js",
-    "app.js.map": "/sia-publications/static/js/app.414b6991.chunk.js.map",
-    "runtime~app.js": "/sia-publications/static/js/runtime~app.06f1bef8.js",
-    "runtime~app.js.map": "/sia-publications/static/js/runtime~app.06f1bef8.js.map",
-    "static/js/2.889988a3.chunk.js": "/sia-publications/static/js/2.889988a3.chunk.js",
-    "static/js/2.889988a3.chunk.js.map": "/sia-publications/static/js/2.889988a3.chunk.js.map",
+    "main.js": "/sia-publications/static/js/main.01da99af.chunk.js",
+    "main.js.map": "/sia-publications/static/js/main.01da99af.chunk.js.map",
+    "runtime-main.js": "/sia-publications/static/js/runtime-main.b20c50fa.js",
+    "runtime-main.js.map": "/sia-publications/static/js/runtime-main.b20c50fa.js.map",
+    "static/js/2.9f4a015c.chunk.js": "/sia-publications/static/js/2.9f4a015c.chunk.js",
+    "static/js/2.9f4a015c.chunk.js.map": "/sia-publications/static/js/2.9f4a015c.chunk.js.map",
     "index.html": "/sia-publications/index.html",
-    "manifest.json": "/sia-publications/manifest.json",
-    "serve.json": "/sia-publications/serve.json"
+    "precache-manifest.4b0149170988d1fb0edc4cad1576b248.js": "/sia-publications/precache-manifest.4b0149170988d1fb0edc4cad1576b248.js",
+    "service-worker.js": "/sia-publications/service-worker.js",
+    "static/js/2.9f4a015c.chunk.js.LICENSE.txt": "/sia-publications/static/js/2.9f4a015c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime~app.06f1bef8.js",
-    "static/js/2.889988a3.chunk.js",
-    "static/js/app.414b6991.chunk.js"
+    "static/js/runtime-main.b20c50fa.js",
+    "static/js/2.9f4a015c.chunk.js",
+    "static/js/main.01da99af.chunk.js"
   ]
 }
