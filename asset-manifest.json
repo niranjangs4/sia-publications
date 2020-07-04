@@ -1,21 +1,18 @@
 {
   "files": {
-    "app.js": "/sia-publications/static/js/app.0c75738d.chunk.js",
-    "app.js.map": "/sia-publications/static/js/app.0c75738d.chunk.js.map",
+    "app.js": "/sia-publications/static/js/app.414b6991.chunk.js",
+    "app.js.map": "/sia-publications/static/js/app.414b6991.chunk.js.map",
     "runtime~app.js": "/sia-publications/static/js/runtime~app.06f1bef8.js",
     "runtime~app.js.map": "/sia-publications/static/js/runtime~app.06f1bef8.js.map",
-    "static/js/2.058c47cb.chunk.js": "/sia-publications/static/js/2.058c47cb.chunk.js",
-    "static/js/2.058c47cb.chunk.js.map": "/sia-publications/static/js/2.058c47cb.chunk.js.map",
-    "favicon-16.png": "/sia-publications/favicon-16.png",
-    "favicon-32.png": "/sia-publications/favicon-32.png",
-    "favicon.ico": "/sia-publications/favicon.ico",
+    "static/js/2.889988a3.chunk.js": "/sia-publications/static/js/2.889988a3.chunk.js",
+    "static/js/2.889988a3.chunk.js.map": "/sia-publications/static/js/2.889988a3.chunk.js.map",
     "index.html": "/sia-publications/index.html",
     "manifest.json": "/sia-publications/manifest.json",
     "serve.json": "/sia-publications/serve.json"
   },
   "entrypoints": [
     "static/js/runtime~app.06f1bef8.js",
-    "static/js/2.058c47cb.chunk.js",
-    "static/js/app.0c75738d.chunk.js"
+    "static/js/2.889988a3.chunk.js",
+    "static/js/app.414b6991.chunk.js"
   ]
 }
