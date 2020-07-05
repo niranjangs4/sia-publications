@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 import { Select,Input } from 'antd';
-import {Text,View,Button} from 'react-native';
+import {Text,View,Button, TextInput } from 'react-native';
 import CKEditor from "@ckeditor/ckeditor5-react";
 // NOTE: Use the editor from source (not a build)!
 import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
@@ -10,9 +10,16 @@ import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor"
 import { message } from 'antd';
 
 import editorConfiguration from "../ckeditor"
+
+
+
+
 // import HTML from 'react-native-render-html';
 const { Option } = Select;
 const { TextArea } = Input;
+
+
+
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
@@ -38,6 +45,8 @@ class CreateQuestionAnswer extends Component {
         
 
     };
+    this.getSubjects = this.getSubjects.bind(this);
+    this.getCourse = this.getCourse.bind(this);
     this.handleAuthorCreated = this.handleAuthorCreated.bind(this);
   }
 
@@ -82,7 +91,7 @@ class CreateQuestionAnswer extends Component {
         console.log(response)
   }
 
-  async componentDidMount() {
+async getCourse(e) {
     let options = {
       method:'GET',
       url:"http://niranjan-sia.herokuapp.com/api/v1/chairman/get_subjects_by_course/",
@@ -96,10 +105,11 @@ class CreateQuestionAnswer extends Component {
   await this.setState({ 
     course_dropdown:response.data.courses
                 })
+    
               };
   
 
-async updateCourse(id){
+async getSubjects(id){
 this.setState({course_id:id})
 
 let options = {
@@ -127,12 +137,14 @@ await this.setState({
     return (
       <div>
       <View style={{ justifyItems:"center"}}>
+
                 <View style={{width:"90%", alignSelf:"center",justifyContent:"space-between", flexDirection:"row"}}>
                 <Select
                   defaultValue="select"
                   style={{ width: 250 }}
-                  // onChange={e => this.setState({status:e})}
-                  onChange={e=>this.updateCourse(e)}
+                  onChange={e => this.setState({course_id:e})}
+                  onFocus={e=>this.getCourse(e)}
+                  onSelect={e=>this.getSubjects(e)}
                 >
                   <Option key="select" value="select">Choose Course</Option>
                   {this.state.course_dropdown.map((value,key) => {
@@ -146,8 +158,8 @@ await this.setState({
                 <Select
                   defaultValue="select"
                   style={{ width: 250 }}
-                  // onChange={e => this.setState({status:e})}
-                  onChange={e=>(this.setState({subject_id:e}))}
+                  onChange={e => this.setState({subject_id:e})}
+                  // onFocus={e=>this.getSubjects(e)}
                 >
                   <Option key="select" value="select">Choose Subject</Option>
                   {this.state.subject_dropdown.map((value,key) => {
@@ -158,6 +170,18 @@ await this.setState({
                 </Select>
                 </View>
                 <View style={{width:"90%", alignSelf:"center"}}>
+                  <Text style={{textAlign:"center"}}>Referance</Text>
+  
+
+                  <TextInput 
+                  placeholder="  Referance area" 
+                  style={{ height: 30, backgroundColor: 'white', borderWidth:0.1, borderColor:"gray"}}
+                  onChangeText={text =>  this.setState({reference:text})}
+                  value={this.state.reference}
+                /> 
+                <div style={{ margin: '5px 0' }} />  
+
+
                 <Text style={{textAlign:"center"}} > Question
                 </Text>
                 <CKEditor
@@ -205,11 +229,9 @@ await this.setState({
                 />
                 
                 </View>
-
+                <div style={{ margin: '5px 0' }} />  
                 <View style={{width:"90%", alignSelf:"center"}}>
-                  <Text style={{textAlign:"center"}}>Referance</Text>
-                <TextArea placeholder="Referance area" autoSize onChange={e => this.setState({reference:e})}/>
-                  <div style={{ margin: '5px 0' }} />   
+
                 <Select
                   defaultValue={this.state.status }
                   style={{ width: 120 }}

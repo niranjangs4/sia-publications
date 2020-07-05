@@ -14,6 +14,7 @@ import ImageStylePlugin from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbarPlugin from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
 import ListPlugin from '@ckeditor/ckeditor5-list/src/list';
@@ -48,13 +49,17 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import ExportPdf from '@ckeditor/ckeditor5-export-pdf/src/exportpdf';
+import ExportWord from '@ckeditor/ckeditor5-export-word/src/exportword';
+import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 
-
-
-import styles from './ckeditor.css';
-// import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
-// import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
-// import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
 const customColorPalette = [
   {
       color: 'hsl(4, 90%, 58%)',
@@ -84,7 +89,7 @@ const customColorPalette = [
   // ...
 ];
 
-
+const templateCSS = '.styled { font-weight: bold; text-align: center; }'
 const editorConfiguration = {
   plugins: [
     //   Essentials, Bold, Italic, Paragraph, 
@@ -115,10 +120,12 @@ const editorConfiguration = {
     Base64UploadAdapter,
     Clipboard,
     Enter,
+    // CKFinder,
     HorizontalLine,
-    Table, TableToolbar, TableProperties, TableCellProperties, CKFinder,
-    // Mathematics
-                                                    // <--- ADDED
+    Table, TableToolbar, TableProperties, TableCellProperties,
+    SpecialCharacters, SpecialCharactersEssentials,SpecialCharactersMathematical,
+    CodeBlock,ExportPdf,ExportWord,SimpleUploadAdapter,SelectAll,LinkImage,MediaEmbed,
+
    MathType  ,    
     Font,
     Highlight,
@@ -127,28 +134,101 @@ const editorConfiguration = {
     PasteFromOffice,
     RemoveFormat,
     PageBreak,
+    TodoList,
 ],
-  toolbar: [
+  toolbar: {
+    items: [
     
     'heading',
     '|',
     'alignment', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor',
   'bold',
   'italic',
-  'underline', 'strikethrough', 'code', 'subscript',
-			'superscript', 'removeFormat',
-  'link',
+  'underline', 
   'bulletedList',
   'numberedList',
-  'imageUpload',
-  'blockQuote',
+  'tableToolbar','MathType', 'ChemType',
+  'specialCharacters','codeBlock','selectAll',
+  'imageUpload','mediaEmbed', 'insertTable','indent', 'outdent',
+  'highlight','exportPdf','exportWord',
+  'horizontalLine','pageBreak',
+"|",
+'strikethrough',  'subscript',
+			'superscript', 'removeFormat',
+  'blockQuote','todoList',
   'undo',
-  'redo', 
-  "paragraph",
+  'redo',
+  'linkImage',
+  'tableColumn', 'tableRow', 'mergeTableCells',
+  'tableProperties', 'tableCellProperties',
+  'imageStyle:side',
+  'imageStyle:alignLeft',
+  'imageStyle:alignRight',
+  'imageTextAlternative',
+  'code',
   
-  'highlight',
-  'indent', 'outdent','mediaEmbed', 'insertTable', 'enter','horizontalLine','pageBreak','tableToolbar','MathType', 'ChemType',
-],
+  
+]},
+fontSize: { options: [9, 10, 11, 12, 14, 19, 21, 24] },
+exportPdf: {
+  stylesheets: [ 'EDITOR_STYLES' ],
+  fileName: 'document.pdf',
+  converterUrl: 'https://pdf-converter.cke-cs.com/v1/convert',
+  converterOptions: {
+      format: 'A4',
+      page_orientation: 'portrait',
+      wait_for_network: true,
+      wait_time: 0,
+      margin_top: '15mm',
+      margin_bottom: '15mm',
+      margin_right: '15mm',
+      margin_left: '15mm',
+      header_html: '<div class="styled">Header content</div>',
+      footer_html: '<div class="styled-counter"><span class="pageNumber"></span></div>',
+      header_and_footer_css: '#header, #footer { background: hsl(0, 0%, 95%); } .styled { font-weight: bold; text-align: center; } .styled-counter { font-size: 1em; color: hsl(0, 0%, 60%); }',
+
+  }
+},
+exportWord: {
+  fileName: 'document.docx',
+  converterUrl: 'https://docx-converter.cke-cs.com/v1/convert',
+  stylesheets: [ 'EDITOR_STYLES' ],
+  converterOptions: {
+      header: [
+        // Header template for all headers (without `type` property).
+        { html: '<div class="styled">Default header content</div>', css: templateCSS },
+        // Header template only for the first page of the document.
+        { html: '<div class="styled">First document page header content</div>', css: templateCSS, type: 'first' },
+        // Header template for the every even page of the document.
+        { html: '<div class="styled">Every even page header content</div>', css: templateCSS, type: 'even' },
+        // Header template for the every odd page of the document.
+        { html: '<div class="styled">Every odd page header content</div>', css: templateCSS, type: 'odd' }
+    ],
+      footer: [
+        // Footer template for all footers (without `type` property).
+        { html: '<div class="styled">Default footer content</div>', css: templateCSS },
+        // Footer template only for the first page of the document.
+        { html: '<div class="styled">First document page footer content</div>', css: templateCSS, type: 'first' },
+        // Footer template for the every even page of the document.
+        { html: '<div class="styled">Every even page footer content</div>', css: templateCSS, type: 'even' },
+        // Footer template for the every odd page of the document.
+        { html: '<div class="styled">Every odd page footer content</div>', css: templateCSS, type: 'odd' }
+    ],
+  
+}},
+// simpleUpload: {
+//   // The URL that the images are uploaded to.
+//   uploadUrl: 'http://example.com',
+
+//   // Enable the XMLHttpRequest.withCredentials property.
+//   withCredentials: true,
+
+//   // Headers sent along with the XMLHttpRequest to the upload server.
+//   headers: {
+//       'X-CSRF-TOKEN': 'CSFR-Token',
+//       Authorization: 'Bearer <JSON Web Token>'
+//   }
+// },
 // ckfinder: {
 //   // Upload the images to the server using the CKFinder QuickUpload command.
 //   // uploadUrl: 'file:///C:/Users/Niranjan/Pictures/Screenshots/',
@@ -175,7 +255,34 @@ const editorConfiguration = {
       'alignLeft',
 
       // This represents an image aligned to the right.
-      'alignRight'
+      'alignRight',
+      
+  ]
+},
+
+heading: {
+  options: [
+      { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+      { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+      { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+      {
+          model: 'headingFancy',
+          view: {
+              name: 'h2',
+              classes: 'fancy'
+          },
+          title: 'Heading 2 (fancy)',
+          class: 'ck-heading_heading2_fancy',
+
+          // It needs to be converted before the standard 'heading2'.
+          converterPriority: 'high'
+      },
+      
+      { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+      { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+      { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+      { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
+      { model: 'heading7', view: 'h7', title: 'Heading 7', class: 'ck-heading_heading7' },
   ]
 },
 indentBlock: {

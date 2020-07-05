@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 import { Select,Input } from 'antd';
-import {Text,View,Button} from 'react-native';
+import {Text,View,Button, TextInput} from 'react-native';
 import CKEditor from "@ckeditor/ckeditor5-react";
 // NOTE: Use the editor from source (not a build)!
 import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
@@ -18,8 +18,8 @@ function handleChange(value) {
 }
 class DetailQuestionAnswer extends Component {
  
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
         question:"",
         answer:"",
@@ -62,7 +62,7 @@ class DetailQuestionAnswer extends Component {
     let options = {
       method:'PUT',
       data:formData,
-      url:`http://niranjan-sia.herokuapp.com/api/v1/study/QuestionAnswerRetrieveUpdateAPIView/${this.props.match.params.id}/`,
+      url:`http://niranjan-sia.herokuapp.com/api/v1/study/QuestionAnswerRetrieveUpdateAPIView/${this.props.id}/`,
       headers:{
         'Accept':'application/json', 
         'Content-Type': 'multipart/form-data',
@@ -72,12 +72,12 @@ class DetailQuestionAnswer extends Component {
         console.log(response)
   }
 async componentDidMount() {
-  if (this.props.match.params.id !== ""){
+  if (this.props.id !== ""){
 
   
     let options = {
             method:'GET',
-            url:`http://niranjan-sia.herokuapp.com/api/v1/study/QuestionAnswerRetrieveUpdateAPIView/${this.props.match.params.id}/`,
+            url:`http://niranjan-sia.herokuapp.com/api/v1/study/QuestionAnswerRetrieveUpdateAPIView/${this.props.id}/`,
             headers:{
               'Accept':'application/json', 
             }
@@ -112,9 +112,27 @@ async componentDidMount() {
 
 
     return (
-      <div>
+      
+      
+      <div className="modal">
+        <a className="close" onClick={this.props.close}>
+                            &times;
+                          </a>
       <View>
                 <View style={{width:"90%", alignSelf:"center"}}>
+                  
+                <Text style={{textAlign:"center"}}>Referance</Text>
+  
+
+                  <TextInput 
+                  placeholder="  Referance area" 
+                  style={{ height: 30, backgroundColor: 'white', borderWidth:0.1, borderColor:"gray"}}
+                  onChangeText={text =>  this.setState({reference:text})}
+                  value={this.state.reference}
+                /> 
+                <div style={{ margin: '5px 0' }} />  
+
+
                 <Text style={{textAlign:"center"}} > Question
                 </Text>
                 <CKEditor
@@ -162,15 +180,9 @@ async componentDidMount() {
                 />
                 
                 </View>
-
+                <div style={{ margin: '5px 0' }} />  
                 <View style={{width:"90%", alignSelf:"center"}}>
-                  <Text style={{textAlign:"center"}}>Referance</Text>
-                <TextArea placeholder="Referance area" autoSize onChange={e => this.setState({reference:e})}/>
-                  <div style={{ margin: '5px 0' }} />   
-                  <View style={{width:"90%"}}>                               
-                </View>
-                
- 
+
                 <Select
                   defaultValue={this.state.status }
                   style={{ width: 120 }}

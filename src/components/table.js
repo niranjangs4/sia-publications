@@ -16,6 +16,11 @@ import { message } from 'antd';
 import PieChartDemo from "./piechart"
 import "./table.css";
 import axios from 'axios';
+
+import "./modelPopup.css";
+import Popup from "reactjs-popup";
+import DetailQuestionAnswer from "./DetailQuestionAnswer"
+
 const gridStyle = {
   width: '25%',
   height: '25%',
@@ -184,15 +189,26 @@ columns = [
         width: '10%',
         key: 'x',
         render: (record) => (
-          <View style={{flex:1, flexDirection:"row", justifyContent:"center"}}>
+        //   <View style={{flex:1, flexDirection:"row", justifyContent:"center"}}>
                      
-          <TouchableOpacity style={{width:40, height:30, flex:1}} 
-          onPress={()=> window.open("https://niranjangs4.github.io/sia-publications/detail/question/"+record.id)}>
+        //   <TouchableOpacity style={{width:40, height:30, flex:1}} 
+        //   onPress={()=> window.open("https://niranjangs4.github.io/sia-publications/detail/question/"+record.id)}>
 
-          {record.status ? <a
-          >View & Edit</a> : <a></a>}
-          </TouchableOpacity>
-        </View>
+        //   {record.status ? <a
+        //   >View</a> : <a></a>}
+        //   </TouchableOpacity>
+        // </View>
+         
+              <div className={record.id}>   
+              {console.log(record.id)}           
+              <Popup modal trigger={record.status ?<button>View</button> : <a></a>}>
+
+              {close => <DetailQuestionAnswer close={close} id={record.id}/>}
+                
+                
+              </Popup>
+            </div>
+            
         ),
       }
   ];
